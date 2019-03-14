@@ -1,7 +1,6 @@
- 
+
 
 import java.text.DecimalFormat;
-
 
 public class Leaf implements Component {
 
@@ -29,11 +28,11 @@ public class Leaf implements Component {
 	    // no implementation
 	}
 
-	public void removeChild(Component c) {
+    public void removeChild(Component c) {
         // no implementation
-	}
+    }
 
-	public Component getChild(int i) {
+    public Component getChild(int i) {
         // no implementation
         return null ;
 	}

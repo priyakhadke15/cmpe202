@@ -2,7 +2,6 @@ public class Burger extends LeafDecorator
 {
     private String[] options ;
     
-    
     public Burger( String d )
     {
         super(d) ;
@@ -30,14 +29,17 @@ public class Burger extends LeafDecorator
         for ( int i = 0; i<options.length; i++ )
         {
             if (i>0) {
-                if ( "littlebaconburger".equals(options[i]) ) desc +="LBB\n   " ;
+                if ( "littlebaconburger".equals(options[i]) ) {desc +="LBB\n   " ;}
+                if ( "littlehamburger".equals(options[i]) ) {desc +="LHB\n   " ; }
+                if ( "littlecheeseburger".equals(options[i]) ) {desc +="LCB\n   " ;}
             }
             else 
             {
-                if ( "littlebaconburger".equals(options[i]) ) desc = "LBB\n   " ;
+                if ( "littlebaconburger".equals(options[i]) ) {desc ="LBB\n   " ; }
+                if ( "littlehamburger".equals(options[i]) ) {desc ="LHB\n   " ; }
+                if ( "littlecheeseburger".equals(options[i]) ) {desc ="LCB\n   " ; }
             }  
         }        
         return desc ;
     }
-    
 }
