@@ -26,26 +26,20 @@ public class BuildOrder {
         Toppings t = new Toppings( "Toppings Options" ) ;
         String[] to = { "Lettuce", "Tomatoes", "Grilled Onions", "Jalapeno Peppers"} ;
         String[] where = {"onTop","onTop","onMeat","onMeat"};
-        //t.setOptions( to ) ;
-        t.wrapDecorator( p ) ;
-       
-        Sides sides = new Sides("Choose Your Sides");
-        Fries fries = new Fries("Fries Options");
-        String[] fo = {"Little Fries Cajun"} ;
-        fries.setOptions( fo ) ;
-        
+     
         if (getReceipt() instanceof PaperReceipt ){
             
             t.setOptions( to,where ) ;
             // Setup Custom Burger Ingredients
-            customBurger.setDecorator( t ) ;
+            t.wrapDecorator( p ) ;
+            customBurger.setDecorator(t);
             customBurger.addChild( b ) ;
             customBurger.addChild( p ) ;
             customBurger.addChild( t ) ;
             
         }
         
-         if (getReceipt() instanceof PackingReceipt )
+       if (getReceipt() instanceof PackingReceipt )
          {
          // Packing Receipt
         String[] packto = new String[to.length];
@@ -59,23 +53,25 @@ public class BuildOrder {
         if ( "onDown".equals(where[i]) ) {packto[i]=to[i];} 
         }
         t.setOptions( packto,where) ;
-        customBurger.setDecorator( t ) ;
+        t.wrapDecorator( p ) ;
+        customBurger.setDecorator(t);
         customBurger.addChild( b ) ;
         customBurger.addChild( t ) ;
         customBurger.addChild( p ) ;
        }
+       
+        Sides sides = new Sides("Choose Your Sides");
+        Fries fries = new Fries("Fries Options");
+        String[] fo = {"Little Fries Cajun"} ;
+        fries.setOptions( fo ) ;
         sides.setDecorator( fries ) ;
         sides.addChild(fries);
-        // Add Custom Burger to the Order
-        
-       // t.wrapDecorator(fries);
-        order.addChild( customBurger );
-        order.addChild( sides );
-        
-        order.setDecorator(b);
-        order.setDecorator(fries);
 
-      //  order. move the price decorator from customburger and leaf to composite
+        // Add Custom Burger to the Order
+        order.setDecorator(t);
+        order.addChild( (Component)customBurger );
+        order.addChild( (Component)sides );
+
        return order ;
     }
 }

@@ -20,7 +20,6 @@ public class CustomBurger extends Composite
         } 
     }
     else if (((new BuildOrder().getReceipt()) instanceof PackingReceipt)){
-      DecimalFormat fmt = new DecimalFormat("0.00");
       System.out.println( " " + description);
       for (Component obj  : components)
         {

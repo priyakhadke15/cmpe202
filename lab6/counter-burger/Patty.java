@@ -9,6 +9,7 @@ public class Patty extends LeafDecorator
     public void setOptions( String[] options )
     {
         this.options = options ;
+        this.price += 0.00 ;
     }
     
     public String getDescription() 

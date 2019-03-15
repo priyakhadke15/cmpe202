@@ -17,6 +17,7 @@ public class Toppings extends LeafDecorator
     {
         this.options = options ;
         this.where = where ;
+        this.price += 0.00 ;
     }
     public String getDescription() 
     {
