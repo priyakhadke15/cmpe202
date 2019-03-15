@@ -16,8 +16,8 @@ public class Patty extends LeafDecorator
         String desc = "{{{{ " ;
         for ( int i = 0; i<options.length; i++ )
         {
-        if ( "Bacon".equals(options[i]) )  desc += "BACON"  ;
-        if ( "Ham".equals(options[i]) )  desc += "HAM"  ;
+        if ( "Bacon".equals(options[i]) )   desc += "BACON"  ;
+        if ( "Ham".equals(options[i]) )     desc += "HAM"  ;
         if ( "Cheese".equals(options[i]) )  desc += "CHEESE"  ;
         } 
         desc+= " }}}}";

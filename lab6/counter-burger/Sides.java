@@ -8,16 +8,24 @@ public class Sides extends Composite
     public Sides ( String d )
     {
         super(d) ;
-    }
-   
+    } 
     public void printDescription() {
         DecimalFormat fmt = new DecimalFormat("0.00");
-        System.out.println( " " + description + " " + fmt.format(super.decorator.getPrice()) );
-        for (Component obj  : components)
+      if (((new BuildOrder().getReceipt()) instanceof PaperReceipt)){
+      System.out.println( " " + description + " " + fmt.format(super.decorator.getPrice()) );
+      for (Component obj  : components)
         {
             obj.printDescription();
         }
     }
+    else if (((new BuildOrder().getReceipt()) instanceof PackingReceipt)){
+     System.out.println( " " + description );
+     for (Component obj  : components)
+        {
+            obj.printDescription();
+        }
+    }
+}
 }
 
        

@@ -11,12 +11,23 @@ public class CustomBurger extends Composite
     }
     
     public void printDescription() {
-        DecimalFormat fmt = new DecimalFormat("0.00");
-        System.out.println( " " + description + " " + fmt.format(this.decorator.getPrice()) );
-        for (Component obj  : components)
+     if (((new BuildOrder().getReceipt()) instanceof PaperReceipt)){
+      DecimalFormat fmt = new DecimalFormat("0.00");
+      System.out.println( " " + description + " " + fmt.format(this.decorator.getPrice()) );
+      for (Component obj  : components)
         {
             obj.printDescription();
-        }
+        } 
+    }
+    else if (((new BuildOrder().getReceipt()) instanceof PackingReceipt)){
+      DecimalFormat fmt = new DecimalFormat("0.00");
+      System.out.println( " " + description);
+      for (Component obj  : components)
+        {
+            obj.printDescription();
+        } 
+    }
+       
     }
 }
 

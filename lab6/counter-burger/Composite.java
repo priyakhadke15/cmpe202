@@ -20,6 +20,8 @@ public class Composite implements Component {
     public void printDescription() {
       DecimalFormat fmt = new DecimalFormat("0.00"); 
       Double price = 0.00;
+      if (((new BuildOrder().getReceipt()) instanceof PaperReceipt)){
+      System.out.println( "=======Customer's Copy==========" );     
       System.out.println( "================================" );  
       System.out.println( description );
       for (Component obj  : components)
@@ -32,6 +34,16 @@ public class Composite implements Component {
        System.out.println( " " + "Total    " + "            $"+ (price+(price*0.09)));
        System.out.println( "================================" );  
     }
+    else  if (((new BuildOrder().getReceipt()) instanceof PackingReceipt)){
+      System.out.println( "=======Packing Receipt==========" );  
+      System.out.println( "================================" );  
+      System.out.println( description );
+      for (Component obj  : components)
+        {
+            obj.printDescription();
+        } 
+       System.out.println( "================================" );  
+    }    }
 
     public void addChild(Component c) {
         components.add( c ) ;
