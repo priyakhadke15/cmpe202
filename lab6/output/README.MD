@@ -16,3 +16,41 @@ Below entities are identified which can be part of the order (This includes item
 - Two receipts are required to be printed - customer copy with prices and the packing receipt with sequence of toppings.
 - Since the order items for both receipts are same but the format of receipt is different. Strategy pattern can be used to determine which receipt should be printed.
 
+The output from the source code is pasted below for reference 
+
+=======Customer's Copy==========
+================================
+FIVE GUYS
+ Build Your Own Burger 5.59
+    LBB
+   
+    {{{{ BACON }}}}
+    LETTUCE
+   TOMATO
+   -> |G ONION
+   -> |JALA Grilled
+   
+ Choose Your Sides 2.79
+    LTL CAJ
+   
+ Sub Total            $ 8.38
+ Tax                  $ 0.75
+ Total                $ 9.13
+================================
+=======Packing Receipt==========
+================================
+FIVE GUYS
+ Build Your Own Burger
+    LBB
+   
+    LETTUCE
+   TOMATO
+   -> |G ONION
+   -> |JALA Grilled
+   
+    {{{{ BACON }}}}
+ Choose Your Sides
+    LTL CAJ
+   
+================================
+
