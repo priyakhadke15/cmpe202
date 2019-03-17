@@ -11,14 +11,14 @@ public class Sides extends Composite
     } 
     public void printDescription() {
         DecimalFormat fmt = new DecimalFormat("0.00");
-      if (((new BuildOrder().getReceipt()) instanceof PaperReceipt)){
+      if (BuildOrder.getReceipt() instanceof PaperReceipt1){
       System.out.println( " " + description + " " + fmt.format(super.decorator.getPrice()) );
       for (Component obj  : components)
         {
             obj.printDescription();
         }
     }
-    else if (((new BuildOrder().getReceipt()) instanceof PackingReceipt)){
+    else if (BuildOrder.getReceipt() instanceof PackingReceipt1){
      System.out.println( " " + description );
      for (Component obj  : components)
         {

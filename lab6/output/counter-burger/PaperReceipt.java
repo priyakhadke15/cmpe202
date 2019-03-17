@@ -14,5 +14,9 @@ public class PaperReceipt extends Composite implements ReceiptStrategy
             obj.printDescription();
         }
     }
+	public Component getOrder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
 }

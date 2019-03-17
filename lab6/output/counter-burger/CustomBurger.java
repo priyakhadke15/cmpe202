@@ -11,7 +11,7 @@ public class CustomBurger extends Composite
     }
     
     public void printDescription() {
-     if (((new BuildOrder().getReceipt()) instanceof PaperReceipt)){
+     if (BuildOrder.getReceipt() instanceof PaperReceipt1){
       DecimalFormat fmt = new DecimalFormat("0.00");
       System.out.println( " " + description + " " + fmt.format(this.decorator.getPrice()) );
       for (Component obj  : components)
@@ -19,7 +19,7 @@ public class CustomBurger extends Composite
             obj.printDescription();
         } 
     }
-    else if (((new BuildOrder().getReceipt()) instanceof PackingReceipt)){
+    else if (BuildOrder.getReceipt() instanceof PackingReceipt1){
       System.out.println( " " + description);
       for (Component obj  : components)
         {

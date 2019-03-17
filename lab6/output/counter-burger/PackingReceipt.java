@@ -11,4 +11,8 @@ public class PackingReceipt extends Composite implements ReceiptStrategy
     {
         
     }
+   public Component getOrder() {
+	// TODO Auto-generated method stub
+	return null;
+}
 }
