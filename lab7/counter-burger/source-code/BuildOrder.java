@@ -90,7 +90,7 @@ public class BuildOrder {
         t2.wrapDecorator( s2 ) ;
         
         Premium p2 = new Premium( "Premium Options" ) ;
-        po = new String[] { "Marinated Tomotoes" , "Sunny Side Up Egg" } ;
+        po = new String[] { "Sunny Side Up Egg" ,"Marinated Tomotoes" } ;
         p2.setOptions( po ) ;
         p2.wrapDecorator( t2 ) ;
         
