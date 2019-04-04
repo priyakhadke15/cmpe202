@@ -9,6 +9,7 @@ public class App {
     private CreditCardNum num;
     private CreditCardExp exp;
     private CreditCardCVC cvc;
+   
     private int count;
 
     public App() {
@@ -17,10 +18,13 @@ public class App {
         num = new CreditCardNum();
         exp = new CreditCardExp();
         cvc = new CreditCardCVC();
-
+        
         screen.addSubComponent(num);
         screen.addSubComponent(exp);
         screen.addSubComponent(cvc);
+        
+        num.wrapDecorator();
+        exp.wrapDecorator();
 
         count = 0;
 

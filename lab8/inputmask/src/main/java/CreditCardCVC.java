@@ -6,9 +6,9 @@ public class CreditCardCVC implements IDisplayComponent, IKeyEventHandler
 	private IKeyEventHandler nextHandler ;
 	private String cvc = "" ;
 
-    public void setNext( IKeyEventHandler next) {
-    	this.nextHandler = next ;
-    }	
+      public void setNext( IKeyEventHandler next) {
+        	this.nextHandler = next ;
+      }	
 
 	public String display() {
 		if ( cvc.equals("") )
@@ -30,5 +30,11 @@ public class CreditCardCVC implements IDisplayComponent, IKeyEventHandler
 	public void addSubComponent( IDisplayComponent c ) {
 		return ; // do nothing
 	}
-
+	
+        public String getKey(){
+            return this.cvc;
+          }
+        
+        public void wrapDecorator() {
+        }
 }

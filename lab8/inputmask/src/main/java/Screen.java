@@ -42,5 +42,10 @@ public class Screen implements IScreen, IDisplayComponent
     public String name() {
         return (this.getClass().getName()) ; 
     }
-
+    
+    public String getKey(){
+        return null;
+    }
+    
+    public void wrapDecorator(){}
 }

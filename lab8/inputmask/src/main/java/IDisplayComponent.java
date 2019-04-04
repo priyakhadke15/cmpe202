@@ -2,7 +2,8 @@
 
 public interface IDisplayComponent
 {
-
     String display() ;								// Display all UI commponents on a Screen
     void addSubComponent( IDisplayComponent c ) ;	// Add a Nested / Subcomponent 
+    String getKey();
+    void wrapDecorator();
 }
