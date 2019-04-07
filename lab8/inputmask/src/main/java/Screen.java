@@ -27,6 +27,7 @@ public class Screen implements IScreen, IDisplayComponent
         {
             IKeyEventHandler prev = (IKeyEventHandler) components.get(components.size()-2) ;
             prev.setNext( (IKeyEventHandler) c ) ;
+            ((IKeyEventHandler) c).setPrev(prev) ;
         }
     }
     
@@ -47,5 +48,5 @@ public class Screen implements IScreen, IDisplayComponent
         return null;
     }
     
-    public void wrapDecorator(){}
+    public void wrapDecorator(Decorator d){}
 }

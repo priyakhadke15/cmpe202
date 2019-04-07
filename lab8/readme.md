@@ -1,0 +1,1 @@
+Decorator Pattern was used to handle the space in card number and slash in card expiration date.Decorator was selected as the appending of space and date slash is required in addition to existing display function. This is taken care by Decorator by explicitly wrapping the decorators to the components

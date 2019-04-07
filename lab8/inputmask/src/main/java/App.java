@@ -9,6 +9,8 @@ public class App {
     private CreditCardNum num;
     private CreditCardExp exp;
     private CreditCardCVC cvc;
+    private Decorator space;
+    private Decorator dateSlash;
    
     private int count;
 
@@ -18,13 +20,15 @@ public class App {
         num = new CreditCardNum();
         exp = new CreditCardExp();
         cvc = new CreditCardCVC();
+        dateSlash = new DateDecorator(exp);
+        space = new SpaceDecorator(num);
         
         screen.addSubComponent(num);
         screen.addSubComponent(exp);
         screen.addSubComponent(cvc);
         
-        num.wrapDecorator();
-        exp.wrapDecorator();
+        num.wrapDecorator(space);
+        exp.wrapDecorator(dateSlash);
 
         count = 0;
 
@@ -43,7 +47,16 @@ public class App {
     }
 
     public void key(String ch) {
-        count++;
+        if (ch.equalsIgnoreCase("X")){
+            if (count == 0) {
+                return;
+            }
+            count--;
+        } else if(count == 23) {
+            return;
+        } else {
+            count++;
+        }
         screen.key(ch, count);
     }
 

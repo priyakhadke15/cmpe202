@@ -30,5 +30,5 @@ public class DateDecorator extends Decorator
         return s += "/" ;
     }
     
-    public void wrapDecorator(){}
+    public void wrapDecorator(Decorator d){}
 }
